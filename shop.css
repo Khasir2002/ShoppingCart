@@ -26,7 +26,6 @@ main {
 
 header {
   display: flex;
-  /* justify-content: space-around; */
   padding: 12px;
 }
 
@@ -37,6 +36,12 @@ hr {
 }
 
 /* -----------------------------nav bar-------------------------------- */
+
+.active {
+  color: aqua;
+}
+
+
 .logo {
   height: 7rem;
   cursor: pointer;
@@ -45,27 +50,28 @@ hr {
 .navlinks-group {
   display: flex;
   justify-content: end;
-  margin-left: 30rem;
+  margin-left: 20rem;
   cursor: pointer;
   text-transform: uppercase;
   margin-top: 1rem;
-  margin-top: 2.7rem;
 }
 
 .nav-links {
   color: white;
   padding-left: 1rem;
   letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .nav-links:hover,
-nav ul li a:hover {
+nav ul li a:hover,
+.active {
   color: aqua;
   transform: scale(1.09);
   transition: 0.5s ease;
   --_p: 100%;
 }
+
 
 nav ul li a {
   text-decoration: none;
@@ -84,48 +90,98 @@ nav ul {
   list-style: none;
 }
 
-header .shopping {
+.navlinks {
+  margin-left: auto;
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.navlinks button {
+  font-size: 0.6rem;
+  height: 3rem;
+  width: 6.5rem;
+  margin-left: 2rem;
+  padding-bottom: 0.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
   position: relative;
-  text-align: right;
-}
-
-.shopping {
-  width: 40px;
-}
-
-header .shopping img {
-  width: 40px;
-  margin-top: 31px;
-}
-
-header .shopping span {
-  background-color: red;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  position: absolute;
-  top: -10px;
-  margin-top: 32px;
-  left: 80%;
-  padding: 2px 8px;
+  border-radius: 5px;
+  background: #094ca8;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: none;
+  margin-top: -12px;
+  cursor: pointer;
 }
 
-/* .total {
-  background-color: red;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+.navlinks button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #f0cf2c;
   position: absolute;
-  top: -10px;
-  margin-top: 34px;
-  left: 80%;
-  padding: 2px 8px;
-  margin-left: 13.5rem;
-} */
+  transition: all 0.4s ease-in-out;
+  right: 0;
+  margin-top: 0.5rem;
+}
+
+.navlinks button:hover::after {
+  right: auto;
+  left: 0;
+  width: 80%;
+}
+
+.navlinks button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 0 auto;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+.navlinks button:hover span {
+  font-weight: 700;
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-icon {
+  background-image: url("./image/shopping.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  top: -4px;
+  position: relative;
+}
+
 
 /* -------------------------------------------------------------------- */
 .card {
@@ -182,7 +238,6 @@ header .shopping span {
 
 .price {
   font-size: 2rem;
-  /* font-family: 'Times New Roman', Times, serif; */
   font-family: monospace;
   font-weight: 700;
   margin-top: 0.7rem;
@@ -234,7 +289,6 @@ header .shopping span {
 
 .cart {
   height: 3rem;
-  /* font-family: 'IBM Plex Mono'; */
   font-weight: 700;
   margin-right: 6rem;
   margin-top: 2.2rem;
@@ -262,7 +316,6 @@ header .shopping span {
 .size {
   width: 4rem;
   height: 2.8rem;
-  /* background-color: #348d6e; */
   margin-top: -0.5rem;
   border-radius: 8px;
   color: rgb(0, 0, 0);
@@ -347,139 +400,7 @@ header .shopping span {
   display: none;
 }
 
-.active {
-  color: aqua;
-}
 
-
-.logo {
-  height: 7rem;
-  cursor: pointer;
-}
-
-.navlinks-group {
-  display: flex;
-  justify-content: end;
-  margin-left: 20rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin-top: 1rem;
-}
-
-.nav-links {
-  color: white;
-  padding-left: 1rem;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-}
-
-.nav-links:hover,
-nav ul li a:hover,
-.active {
-  color: aqua;
-  transform: scale(1.09);
-  transition: 0.5s ease;
-  --_p: 100%;
-}
-
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  --s: 0.1em;
-  --c: aqua;
-  padding-bottom: var(--s);
-  background: linear-gradient(90deg, var(--c) 50%, #000 0) calc(100% - var(--_p, 0%)) / 200% 100%,
-    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
-  -webkit-background-clip: text, padding-box;
-  background-clip: text, padding-box;
-  transition: 0.5s;
-}
-
-nav ul {
-  list-style: none;
-}
-
-.active {
-  color: aqua;
-}
-
-.navlinks {
-  margin-left: auto;
-  margin-right: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.navlinks button {
-  font-size: 0.6rem;
-  height: 3rem;
-  width: 6.5rem;
-  margin-left: 3rem;
-  padding-bottom: 0.6rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  background: #094ca8;
-  font-family: "Montserrat", sans-serif;
-  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  border: none;
-  margin-top: 0;
-  cursor: pointer;
-}
-
-.navlinks button:after {
-  content: " ";
-  width: 0%;
-  height: 100%;
-  background: #f0cf2c;
-  position: absolute;
-  transition: all 0.4s ease-in-out;
-  right: 0;
-  margin-top: 0.5rem;
-}
-
-.navlinks button:hover::after {
-  right: auto;
-  left: 0;
-  width: 100%;
-}
-
-.navlinks button span {
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-  padding: 18px 25px;
-  color: #fff;
-  font-size: 1.125em;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  z-index: 20;
-  transition: all 0.3s ease-in-out;
-}
-
-.navlinks button:hover span {
-  font-weight: 700;
-  color: #183153;
-  animation: scaleUp 0.3s ease-in-out;
-}
-
-.cart-icon {
-  background-image: url("./image/shopping.svg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 24px;
-  height: 24px;
-  position: relative;
-}
 
 #cartTotal{
   position: absolute;

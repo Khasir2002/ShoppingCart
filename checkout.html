@@ -7,7 +7,7 @@
   <title>Travel Vista</title>
   <link rel="stylesheet" href="cart.css">
   <link rel="stylesheet" href="checkout.css">
-  <link rel="stylesheet" href="./footer.css">
+  <link rel="stylesheet" href="./external.css">
   <link rel="icon" href="./image/logo.png" type="image/png">
 </head>
 
@@ -16,30 +16,31 @@
     <img src="./image/logo.png" class="logo" />
     <nav class="navlinks">
       <ul class="navlinks-group">
-        <!-- <li class="nav-links"><a href="#">home</a></li> -->
-        <li class="nav-links"><a href="index.html" class="active">shop</a></li>
-        <!-- <li class="nav-links"><a href="#">thumbnail</a></li> -->
-        <!-- <li class="nav-links"><a href="#">sitemap</a></li> -->
-        <!-- <li class="nav-links"><a href="#">aboutus</a></li> -->
-        <a href="cart.html">
+        <li class="nav-links"><a href="../Home2/index.html" target="_blank">home</a></li>
+        <li class="nav-links"><a href="../cart/shop.html" target="_blank">shop</a></li>
+        <li class="nav-links"><a href="../thumbnail/thumbnail/thumbnail.html" target="_blank">thumbnail</a></li>
+        <li class="nav-links"><a href="../sitemap/sitemap/sitemap.html" target="_blank">sitemap</a></li>
+            <li class="nav-links"><a href="#">quiz</a></li>
+        <li class="nav-links"><a href="#" target="_blank">aboutus</a></li>
+        <button onclick="window.location.href='../Feedback Form/feelings.html'">
+          <span style="background: none">support</span>
+          </button>
+        <a href="cart.html"  class="active">
           <li class="nav-links">
             <div class="cart-icon">
               <div class="total" id="cartTotal">0</div>
             </div>
-            <!-- <img class="shopping" src="./image/shopping.svg" alt=""><span class="total" id="cartTotal">0</span> -->
           </li>
         </a>
-
       </ul>
     </nav>
-  </header> 
+  </header>
 
   <div class="container">
 
     <table class="table" width="100%">
       <thead>
         <tr class="table-row">
-          <!-- <th>Remove</th> -->
           <th>&nbsp;Image</th>
           <th>Product</th>
           <th>Price (LKR)</th>
@@ -63,9 +64,9 @@
 
         <div class="col">
 
-          <h3 class="title">Billing Address</h3>
+          <h3 class="title">Billing Details</h3>
 
-          <div class="inputBox">
+          <div class="inputBox required-field">
             <span>Full Name :</span>
             <input type="text" placeholder="Enter your name" required maxlength="20">
           </div>
@@ -73,9 +74,9 @@
             <span>Email :</span>
             <input type="email" placeholder="Enter your email" required>
           </div>
-          <div class="inputBox">
+          <div class="inputBox required-field">
             <span>Address :</span>
-            <input type="text" placeholder="Enter your address">
+            <input type="text" placeholder="Enter your address" required>
           </div>
           <div class="inputBox">
             <span>City :</span>
@@ -87,7 +88,7 @@
               <span>State :</span>
               <input type="text" placeholder="Sri Lanka">
             </div>
-            <div class="inputBox">
+            <div class="inputBox required-field">
               <span>Zip Code :</span>
               <input type="text" placeholder="70000" required maxlength="5">
             </div>
@@ -108,14 +109,14 @@
 
           <div class="inputBox">
             <span>Name on card :</span>
-            <input type="text" placeholder="mr.dinujaya">
+            <input type="text" placeholder="mr.dinujaya" required>
           </div>
 
           <div class="inputBox">
             <span>Credit card number :</span>
             <input type="tel" placeholder="XXXX - XXXX - XXXX - XXXX" required maxlength="16">
           </div>
-          <div class="inputBox">
+          <div class="inputBox required-field">
             <span>Expire month:</span>
             <input type="month" placeholder="january" required>
           </div>
@@ -123,9 +124,9 @@
           <div class="flex">
             <div class="inputBox">
               <span>Expire year :</span>
-              <input type="number" placeholder="2030"  maxlength="4">
+              <input type="number" placeholder="2030"  maxlength="4" value="2023">
             </div>
-            <div class="inputBox">
+            <div class="inputBox required-field">
               <span>CVV Number :</span>
               <input type="text" placeholder="123" maxlength="3" required>
             </div>
@@ -145,7 +146,11 @@
   <footer>
     <div class="frist-row-footer">
       <div class="f-logo-footer">
-        <img src="./image/footer image/logoFooter.png" alt="" class="logo-footer" />
+        <img
+          src="./image/footer image/logoFooter.png"
+          alt=""
+          class="logo-footer"
+        />
       </div>
       <div class="s-topl-footer">
         <h3 style="background: none" class="footer-top-heading">TOP LINKS</h3>
@@ -169,32 +174,64 @@
         <div class="items-ex-footer">
           <a href="#" class="items-t-footer">SITE MAP</a>
           <a href="#" class="items-t-footer">EXTERNAL SOURCES</a>
+          <a href="../Page Editors/Student2/student2.html" class="items-t-footer" target="_blank">PAGE EDITOR</a>
         </div>
       </div>
       <div class="t-email-footer">
         <h3 style="background: none" class="footwe-news-head">NEWS LETTER</h3>
         <div style="background: none" class="input-group">
-          <input type="email" class="input-email" id="Email" name="Email" placeholder="codearcade@ca20.lk"
-            required="true" />
+          <input
+            type="email"
+            class="input-email"
+            id="Email"
+            name="Email"
+            placeholder="codearcade@ca20.lk"
+            required="true"
+          />
           <input class="button--submit" value="Subscribe" type="submit" />
         </div>
         <div style="background: none" class="imgpayment">
-          <img style="background: none" src="./image/footer image/pay 1.png" alt="" srcset="" />
+          <img
+            style="background: none"
+            src="./image/footer image/pay 1.png"
+            alt=""
+            srcset=""
+          />
         </div>
       </div>
       <div class="followus">
         <h3 style="background: none" class="follow">Follow us</h3>
         <div style="background: none" class="socialicon1">
-          <a class="social-media-icon" href="#"><img class="social-media-icon"
-              src="./image/footer image/🦆 icon _Facebook v1_.png" alt="" srcset="" /></a>
-          <a class="social-media-icon" href="#"><img class="social-media-icon"
-              src="./image/footer image/🦆 icon _Instagram_.png" alt="" srcset="" /></a>
+          <a class="social-media-icon" href="#"
+            ><img
+              class="social-media-icon"
+              src="./image/footer image/🦆 icon _Facebook v1_.png"
+              alt=""
+              srcset=""
+          /></a>
+          <a class="social-media-icon" href="#"
+            ><img
+              class="social-media-icon"
+              src="./image/footer image/🦆 icon _Instagram_.png"
+              alt=""
+              srcset=""
+          /></a>
         </div>
         <div style="background: none" class="socialicon1">
-          <a class="social-media-icon" href="#"><img class="social-media-icon"
-              src="./image/footer image/🦆 icon _Linkedin_.png" alt="" srcset="" /></a>
-          <a class="social-media-icon" href="#"><img class="social-media-icon"
-              src="./image/footer image/🦆 icon _Twitter_.png" alt="" srcset="" /></a>
+          <a class="social-media-icon" href="#"
+            ><img
+              class="social-media-icon"
+              src="./image/footer image/🦆 icon _Linkedin_.png"
+              alt=""
+              srcset=""
+          /></a>
+          <a class="social-media-icon" href="#"
+            ><img
+              class="social-media-icon"
+              src="./image/footer image/🦆 icon _Twitter_.png"
+              alt=""
+              srcset=""
+          /></a>
         </div>
       </div>
     </div>

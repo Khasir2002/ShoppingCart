@@ -1,6 +1,5 @@
 (function () {
 
-  // Retrieve the cart items from local storage
   var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
   var totalSubtotal = 0;
@@ -17,30 +16,25 @@
     // Clearing  the table body again
     tableBody.innerHTML = "";
 
-    // Reset the total subtotal
     totalSubtotal = 0;
 
     // Cart empty function
-
     if (cartItems.length === 0) {
       // Show the empty cart message
       emptyCartMessage.textContent = "Your cart is empty";
       emptyCartMessage.style.display = "block";
 
-      // Clear the total subtotal
       totalSubtotalElement.textContent = "";
       return;
     }
 
-    // Hide the empty cart message if it was previously shown
     emptyCartMessage.textContent = "";
 
-    // Iterate over the cart items and generate table rows
+    // Iterating the cart items and generate table rows
     cartItems.forEach(function (item, index) {
       // Create a new table row
       var row = document.createElement("tr");
-
-      // Create table cells for each item detail
+    // create table cells/
       var removeCell = document.createElement("td");
       var imageCell = document.createElement("td");
       var nameCell = document.createElement("td");
@@ -84,14 +78,10 @@
 
       tableBody.appendChild(row);
 
-      // Add the current subtotal to the total subtotal
       totalSubtotal += calculateSubtotal(item.price, item.quantity);
     });
 
-    // Update the total subtotal value
     totalSubtotalElement.textContent = totalSubtotal;
-
-    // Enable or disable the checkout button based on cart items.
 
     if (cartItems.length === 0) {
       checkoutButton.classList.add("disabled");
@@ -156,7 +146,7 @@
       window.location.href = "checkout.html";
     }
   }
-
+//init means initialize that function calls first.
   function init() {
     var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     document.getElementById("cartTotal").innerText = cartItems.length;

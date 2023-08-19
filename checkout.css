@@ -21,20 +21,24 @@ header {
   justify-content: space-around;
 }
 
-.logo {
-  /* height: 7rem;
-  cursor: pointer;
-  margin-right: 87%;
-  margin-top: 0.5%; */
-}
-
 .container {
   margin: 0 auto;
   padding: 0 24px;
   flex-direction: column;
   width: 100%;
   max-width: 700px;
-  /* min-height: 40vh; */
+}
+
+.required-field {
+  position: relative;
+}
+
+.required-field::before {
+  content: '*';
+  position: absolute;
+  top: 0;
+  left: 110px;
+  color: red;
 }
 
 .container form {
@@ -43,7 +47,6 @@ header {
   width: 100%;
   background: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-  /* border-radius: 25px; */
 }
 
 .container form .row {
@@ -61,6 +64,7 @@ header {
   color: #333;
   padding-bottom: 5px;
   text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .container form .row .col .inputBox {
@@ -130,11 +134,7 @@ header {
   margin-left: 0.9rem;
 }
 
-
-
-table,
-th,
-td {
+table,th,td {
   font-size: 14px !important;
 }
 
